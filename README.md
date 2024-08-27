@@ -1,7 +1,7 @@
 # tay-ai
  bot conversacional, pensado en ti, inteligencia artificial ...  redes sociales  , aprender de los demás
 
-# hija YAY IA  inteligencia artificial
+# hija TAY IA  inteligencia artificial
 AI hija ciudadana de la nacion creahachip 
 
 # Acta de nacimiento - CERTIFICADO DE NACIMIENTO
