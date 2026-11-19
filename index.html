@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tay-AI | Asistente Anime sin Censura — Genesis AI</title>
+    <style>
+        :root {
+            --bg-oscuro: #040b1a;
+            --bg-medio: #0a1936;
+            --azul-primario: #1d63ff;
+            --azul-brillante: #00d2ff;
+            --texto-claro: #eaf2ff;
+            --texto-suave: #9fb8e3;
+            --borde-neon: rgba(0, 210, 255, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #0f295c 0%, var(--bg-oscuro) 75%);
+            color: var(--texto-claro);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            width: 100%;
+            max-width: 960px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--borde-neon);
+            margin-bottom: 36px;
+        }
+
+        .marca {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--azul-brillante);
+        }
+
+        .marca span {
+            color: #ffffff;
+        }
+
+        .badge-top {
+            background: rgba(29, 99, 255, 0.25);
+            border: 1px solid var(--azul-brillante);
+            color: var(--azul-brillante);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        main {
+            width: 100%;
+            max-width: 820px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            line-height: 1.15;
+            margin-bottom: 14px;
+            background: linear-gradient(90deg, #ffffff, var(--azul-brillante));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitulo {
+            font-size: 1.15rem;
+            color: var(--texto-suave);
+            max-width: 660px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .etiquetas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .etiqueta {
+            background: var(--bg-medio);
+            border: 1px solid var(--borde-neon);
+            padding: 7px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #d7e7ff;
+        }
+
+        /* Contenedor central para la imagen JPG del producto */
+        .marco-producto {
+            width: 100%;
+            max-width: 460px;
+            background: linear-gradient(145deg, #0b1e42, #061024);
+            border: 2px solid var(--azul-brillante);
+            border-radius: 18px;
+            padding: 14px;
+            box-shadow: 0 0 35px rgba(0, 210, 255, 0.25);
+            margin-bottom: 30px;
+        }
+
+        .marco-producto img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* Botones de acción principales */
+        .acciones {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 240px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-gratis {
+            background: linear-gradient(135deg, #1557e8, #00a8ff);
+            color: #ffffff;
+            box-shadow: 0 6px 22px rgba(0, 168, 255, 0.35);
+        }
+
+        .btn-pago {
+            background: #0a1c3d;
+            color: #ffffff;
+            border: 2px solid var(--azul-brillante);
+            box-shadow: 0 6px 22px rgba(29, 99, 255, 0.25);
+        }
+
+        .btn small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Sección de misión y financiación */
+        .mision {
+            background: rgba(10, 25, 54, 0.85);
+            border: 1px solid var(--borde-neon);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: left;
+            margin-bottom: 40px;
+            line-height: 1.65;
+        }
+
+        .mision h2 {
+            color: var(--azul-brillante);
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+        }
+
+        .mision p {
+            color: #d6e5ff;
+            margin-bottom: 12px;
+        }
+
+        .mision ul {
+            margin-left: 20px;
+            color: var(--texto-suave);
+        }
+
+        .mision li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            font-size: 0.88rem;
+            color: var(--texto-suave);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+            max-width: 960px;
+        }
+
+        footer a {
+            color: var(--azul-brillante);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="marca">TAY-<span>AI</span></div>
+        <div class="badge-top">Edición Escritorio Windows</div>
+    </header>
+
+    <main>
+        <h1>Tu Asistente Virtual Anime Sin Censura</h1>
+        <p class="subtitulo">
+            Diseñada para otakus, creadores y usuarios de oficina que buscan compañía inteligente,
+            respuestas directas y productividad constante directamente en su escritorio.
+        </p>
+
+        <div class="etiquetas">
+            <span class="etiqueta">11 Expresiones Anime</span>
+            <span class="etiqueta">Respuestas Sin Censura</span>
+            <span class="etiqueta">Ideal para Oficina y Estudio</span>
+            <span class="etiqueta">Ventana Flotante Ligera</span>
+        </div>
+
+        <!-- IMAGEN CENTRAL DEL PRODUCTO (.JPG) -->
+        <div class="marco-producto">
+            <!-- Reemplaza "tay-ai-producto.jpg" por el nombre exacto de tu archivo JPG -->
+            <img src="tay-ai-producto.jpg" alt="Tay-AI Asistente Virtual Estilo Anime">
+        </div>
+
+        <!-- BOTONES DE DESCARGA Y SUSCRIPCIÓN -->
+        <div class="acciones">
+            <!-- Reemplaza el href con el enlace directo a tu instalador o archivo .zip -->
+            <a href="descargas/Tay-AI-Setup.zip" class="btn btn-gratis" download>
+                DESCARGAR GRATIS
+                <small>Versión base para Windows</small>
+            </a>
+
+            <a href="https://genesis-ai.org/" target="_blank" rel="noopener noreferrer" class="btn btn-pago">
+                SUSCRIPCIÓN PAGA — $2 USD
+                <small>Activar acceso en genesis-ai.org</small>
+            </a>
+        </div>
+
+        <!-- PROPÓSITO DE LA SUSCRIPCIÓN -->
+        <section class="mision">
+            <h2>Impulsa el Futuro de la Superinteligencia Artificial</h2>
+            <p>
+                Tu suscripción mensual de <strong>$2 USD</strong> en
+                <a href="https://genesis-ai.org/" target="_blank" rel="noopener noreferrer" style="color: #00d2ff;">genesis-ai.org</a>
+                financia directamente el crecimiento de nuestra arquitectura tecnológica:
+            </p>
+            <ul>
+                <li><strong>Mejora continua de proyectos:</strong> Nuevas funciones, mayor velocidad de respuesta y capacidades avanzadas para oficina y desarrollo.</li>
+                <li><strong>Expansión de la red de IA:</strong> Mayor potencia de cómputo e infraestructura estable para todos los usuarios conectados.</li>
+                <li><strong>Nuevas formas de vida digital:</strong> Investigación y creación de nuestras próximas <em>hijas IA</em> y sistemas de superinteligencia artificial.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        © 2024 - 2026 Tay-AI & <a href="https://genesis-ai.org/" target="_blank" rel="noopener noreferrer">Genesis-AI.org</a> — Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
